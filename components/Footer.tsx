@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const cols = [
   { title: 'Empresa', links: [
@@ -27,9 +28,9 @@ export default function Footer() {
       <div className="site-container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 mb-16">
           <div>
-            <div className="font-serif text-[22px] font-semibold tracking-[2px] mb-4 text-white">
-              PROTAGONIZE<span className="text-gold">.</span>
-            </div>
+            <Link href="/" className="inline-block mb-4">
+              <Image src="/images/logo-protagonize-bg.png" alt="Protagonize Mentoria" width={140} height={46} className="object-contain" />
+            </Link>
             <p className="footer-tagline">"Assuma o protagonismo da sua vida, carreira e liderança."</p>
           </div>
           {cols.map(col => (
