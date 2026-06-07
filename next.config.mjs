@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/protagonize',
   images: {
-    remotePatterns: [],
+    unoptimized: true,
   },
 }
+
 export default nextConfig
