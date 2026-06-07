@@ -19,7 +19,7 @@ export default function AboutPage() {
 
       {/* Story */}
       <section style={{ background: 'var(--white)', padding: '100px 5%' }}>
-        <div className="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <FadeIn>
             <SectionEyebrow>Nossa história</SectionEyebrow>
             <h2 className="section-h2">
@@ -27,7 +27,7 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col gap-5 font-light" style={{ fontSize: 15, color: 'var(--gray-600)', lineHeight: 1.85 }}>
               <p>A Protagonize nasceu de uma convicção simples, mas poderosa: a maior parte das limitações profissionais é de natureza humana, não técnica. Profissionais que travam, líderes que não engajam, carreiras que estagnaram — tudo tem raiz em comportamentos, crenças e emoções não trabalhadas.</p>
-              <p>Camilla e Luciana se uniram para criar o que o mercado ainda não tinha: uma metodologia que integra liderança prática, gestão e psicologia aplicada. O resultado é um desenvolvimento que transforma de dentro para fora — não apenas o que o profissional faz, mas quem ele é.</p>
+              <p>Camilla Santos e Luciana Venâncio se uniram para criar o que o mercado ainda não tinha: uma metodologia que integra liderança prática, gestão e psicologia aplicada. O resultado é um desenvolvimento que transforma de dentro para fora — não apenas o que o profissional faz, mas quem ele é.</p>
               <p>Hoje a Protagonize é reconhecida pela profundidade, pela sofisticação do método e pelos resultados verificáveis de centenas de profissionais que assumiram o protagonismo da própria vida.</p>
             </div>
           </FadeIn>
@@ -77,7 +77,7 @@ export default function AboutPage() {
             <SectionEyebrow>Princípios</SectionEyebrow>
             <h2 className="section-h2">O que nos <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>guia</em></h2>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0.5 mt-[60px]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0.5 mt-[60px]">
             {values.map((v, i) => (
               <FadeIn key={v.title} delay={i * 0.08}>
                 <div className="value-block">
@@ -101,55 +101,39 @@ export default function AboutPage() {
           </FadeIn>
 
           <FadeIn delay={0.15}>
-            <div className="mt-[72px]" style={{ background: 'var(--black)', display: 'grid', gridTemplateColumns: '3fr 2fr' }}>
+            <div className="mt-[72px]" style={{ background: 'var(--black)' }}>
 
-              {/* Foto das duas juntas — ocupa 3/5 da largura */}
-              <div style={{ position: 'relative', minHeight: 640 }}>
-                <Image
-                  src="/images/camilla-e-luciana.webp"
-                  alt="Camilla Santos e Luciana Venâncio — fundadoras da Protagonize Mentoria"
-                  fill
-                  className="object-cover object-top"
-                />
-              </div>
+              {/* Grid único: empilhado no mobile/tablet, lado a lado no desktop */}
+              <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr]">
 
-              {/* Bio — coluna mais estreita */}
-              <div style={{ padding: '48px 36px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 28 }}>
-
-                {/* Camilla */}
-                <div style={{ paddingBottom: 24, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 4 }}>Liderança & Alta Performance</div>
-                  <h3 className="font-serif font-normal" style={{ fontSize: 22, color: 'var(--white)', marginBottom: 8 }}>Camilla Santos</h3>
-                  <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.50)', lineHeight: 1.7, fontWeight: 300 }}>
-                    Especialista em liderança autêntica e gestão de pessoas. Une coragem, clareza e execução para transformar profissionais em líderes de resultado.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {['Liderança', 'Gestão', 'Performance'].map(tag => (
-                      <span key={tag} className="exp-tag">{tag}</span>
-                    ))}
-                  </div>
+                {/* Foto */}
+                <div className="relative" style={{ aspectRatio: '4/3', minHeight: 300 }}>
+                  <Image
+                    src="/images/camilla-e-luciana.webp"
+                    alt="Camilla Santos e Luciana Venâncio — fundadoras da Protagonize Mentoria"
+                    fill
+                    className="object-cover object-top"
+                  />
                 </div>
 
-                {/* Luciana */}
-                <div style={{ paddingBottom: 24, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                  <div style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 4 }}>Psicologia · Neuropsicologia</div>
-                  <h3 className="font-serif font-normal" style={{ fontSize: 22, color: 'var(--white)', marginBottom: 8 }}>Luciana Venâncio</h3>
-                  <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.50)', lineHeight: 1.7, fontWeight: 300 }}>
-                    Psicóloga especialista em Neuropsicologia. Traz a profundidade científica do comportamento humano, tornando cada transformação duradoura.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {['Psicologia', 'IE', 'Saúde Mental'].map(tag => (
-                      <span key={tag} className="exp-tag">{tag}</span>
-                    ))}
+                {/* Bio — aparece abaixo da foto no mobile/tablet, ao lado no desktop */}
+                <div style={{ padding: '40px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 24 }}>
+                  <div style={{ paddingBottom: 24, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 4 }}>Liderança & Alta Performance</div>
+                    <h3 className="font-serif font-normal" style={{ fontSize: 22, color: 'var(--white)', marginBottom: 8 }}>Camilla Santos</h3>
+                    <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.50)', lineHeight: 1.7, fontWeight: 300 }}>Especialista em liderança autêntica e gestão de pessoas. Une coragem, clareza e execução para transformar profissionais em líderes de resultado.</p>
+                    <div className="flex flex-wrap gap-2 mt-3">{['Liderança', 'Gestão', 'Performance'].map(tag => <span key={tag} className="exp-tag">{tag}</span>)}</div>
                   </div>
-                </div>
-
-                {/* Bio conjunta */}
-                <div>
-                  <div style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 10 }}>Juntas na Protagonize</div>
-                  <p className="font-serif font-light italic" style={{ fontSize: 15, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7 }}>
-                    "Somos sócias, amigas e parceiras de propósito — a materialização da crença de que a verdadeira grandeza está no quanto fazemos outros crescerem."
-                  </p>
+                  <div style={{ paddingBottom: 24, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 4 }}>Psicologia · Neuropsicologia</div>
+                    <h3 className="font-serif font-normal" style={{ fontSize: 22, color: 'var(--white)', marginBottom: 8 }}>Luciana Venâncio</h3>
+                    <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.50)', lineHeight: 1.7, fontWeight: 300 }}>Psicóloga especialista em Neuropsicologia. Traz a profundidade científica do comportamento humano, tornando cada transformação duradoura.</p>
+                    <div className="flex flex-wrap gap-2 mt-3">{['Psicologia', 'IE', 'Saúde Mental'].map(tag => <span key={tag} className="exp-tag">{tag}</span>)}</div>
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 10, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 10 }}>Juntas na Protagonize</div>
+                    <p className="font-serif font-light italic" style={{ fontSize: 15, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7 }}>"Somos sócias, amigas e parceiras de propósito — a materialização da crença de que a verdadeira grandeza está no quanto fazemos outros crescerem."</p>
+                  </div>
                 </div>
 
               </div>

@@ -49,9 +49,9 @@ export function CTASection() {
           <p className="section-lead section-lead--dark mx-auto mb-14 text-center" style={{ maxWidth: 520 }}>
             Agende sua sessão estratégica gratuita e descubra exatamente qual caminho irá acelerar sua evolução como líder e profissional.
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/diagnostico" className="btn-primary">Agendar Sessão Estratégica →</Link>
-            <Link href="/programs" className="btn-secondary">Ver Programas</Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/diagnostico" className="btn-primary" style={{ justifyContent: 'center' }}>Agendar Sessão Estratégica →</Link>
+            <Link href="/programs" className="btn-secondary" style={{ justifyContent: 'center' }}>Ver Programas</Link>
           </div>
         </FadeIn>
       </div>

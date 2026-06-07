@@ -1,10 +1,10 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import Image from 'next/image'
 
 const links = [
   { href: '/',             label: 'Home' },
@@ -16,22 +16,15 @@ const links = [
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen]         = useState(false)
-  const pathname                = usePathname()
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', fn)
-    return () => window.removeEventListener('scroll', fn)
-  }, [])
+  const [open, setOpen] = useState(false)
+  const pathname        = usePathname()
 
   return (
-    <nav className={cn('nav-root', scrolled && 'scrolled', open && 'open')}>
+    <nav className={cn('nav-root scrolled', open && 'open')}>
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: '0 5%', height: 76, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Link href="/" className="nav-logo">
-  <Image src="/images/logo-protagonize-bg.png" alt="Protagonize Mentoria" width={140} height={46} className="object-contain" />
-</Link>
+        <Link href="/">
+          <Image src="/images/logo-protagonize-bg.png" alt="Protagonize Mentoria" width={140} height={46} className="object-contain" />
+        </Link>
 
         <ul className="hidden lg:flex items-center gap-9 list-none">
           {links.map(l => (

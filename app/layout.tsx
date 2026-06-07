@@ -66,7 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR" className={`${playfair.variable} ${inter.variable}`}>
       <body>
         <Navbar />
-        <main>{children}</main>
+        <main style={{ paddingTop: '76px' }}>{children}</main>
       </body>
     </html>
   )

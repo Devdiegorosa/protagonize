@@ -18,7 +18,7 @@ const programDetails = [
     description: 'O ponto de partida para desenvolver liderança, inteligência emocional e alta performance no seu próprio ritmo. Acesso completo ao Método Protagonize em aulas gravadas, com toda a estrutura para você evoluir de onde estiver.',
     howItWorks: [
       { step: '01', title: 'Acesso imediato', desc: 'Ao adquirir, você recebe login na plataforma exclusiva com todos os módulos liberados.' },
-      { step: '02', title: 'Módulos gravados', desc: 'Aulas com Camilla e Luciana aplicando o Método Protagonize completo em 11 etapas.' },
+      { step: '02', title: 'Módulos gravados', desc: 'Aulas com Camilla Santos e Luciana Venâncio aplicando o Método Protagonize completo em 11 etapas.' },
       { step: '03', title: 'Exercícios práticos', desc: 'Cada módulo tem exercícios, ferramentas e PDFs para aplicar imediatamente.' },
       { step: '04', title: 'Certificado', desc: 'Ao concluir, você recebe certificado digital de conclusão.' },
     ],
@@ -40,7 +40,7 @@ const programDetails = [
     description: 'Para líderes que querem acelerar a transformação com suporte ao vivo, a força da comunidade e um plano de ação personalizado. Mais do que um curso — uma experiência de desenvolvimento coletivo de alto nível.',
     howItWorks: [
       { step: '01', title: 'Acesso ao Programa Online', desc: 'Você recebe todo o conteúdo gravado do nível anterior como base.' },
-      { step: '02', title: 'Encontros ao vivo mensais', desc: 'Sessões ao vivo com Camilla e Luciana para aprofundamento, dúvidas e prática.' },
+      { step: '02', title: 'Encontros ao vivo mensais', desc: 'Sessões ao vivo com Camilla Santos e Luciana Venâncio para aprofundamento, dúvidas e prática.' },
       { step: '03', title: 'Comunidade exclusiva', desc: 'Grupo fechado de líderes em desenvolvimento — networking, troca e apoio mútuo.' },
       { step: '04', title: 'Plano de ação', desc: 'Você sai de cada ciclo com um plano de ação concreto para os próximos 30 dias.' },
     ],
@@ -62,7 +62,7 @@ const programDetails = [
     description: 'Acompanhamento 100% personalizado com diagnóstico individual, sessões exclusivas e plano estratégico construído sob medida para o seu momento, seus desafios e seus objetivos. Vagas limitadas.',
     howItWorks: [
       { step: '01', title: 'Diagnóstico individual', desc: 'Mapeamento profundo do seu momento, padrões, pontos fortes e áreas de desenvolvimento.' },
-      { step: '02', title: 'Plano estratégico', desc: 'Com base no diagnóstico, Camilla e Luciana constroem um plano sob medida para você.' },
+      { step: '02', title: 'Plano estratégico', desc: 'Com base no diagnóstico, Camilla Santos e Luciana Venâncio constroem um plano sob medida para você.' },
       { step: '03', title: 'Sessões 1:1', desc: 'Encontros individuais com as mentoras para aprofundar, ajustar e avançar com consistência.' },
       { step: '04', title: 'Suporte contínuo', desc: 'Acompanhamento entre sessões para garantir que o processo não para entre os encontros.' },
     ],
@@ -87,7 +87,7 @@ export default function ProgramsPage() {
       />
 
       {/* ── INTRO */}
-      <section style={{ background: 'var(--white)', padding: '72px 5% 0' }}>
+      <section style={{ background: 'var(--white)', padding: '40px 5% 0' }}>
         <div className="max-w-[1180px] mx-auto">
           <FadeIn>
             <p className="section-lead">
@@ -139,6 +139,26 @@ export default function ProgramsPage() {
                     ))}
                   </ul>
 
+                  {/* Como funciona — mobile only (aparece aqui entre "para quem é" e "resultado") */}
+                  <div className="lg:hidden" style={{ marginBottom: 40 }}>
+                    <div style={{ background: 'var(--black)', padding: '32px', position: 'relative', overflow: 'hidden' }}>
+                      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
+                      <div style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 8 }}>Passo a passo</div>
+                      <h3 className="font-serif font-normal" style={{ fontSize: 20, color: 'var(--white)', marginBottom: 28 }}>Como funciona</h3>
+                      <div className="flex flex-col">
+                        {prog.howItWorks.map((step, i) => (
+                          <div key={step.step} className="flex gap-4" style={{ paddingBottom: i < prog.howItWorks.length - 1 ? 20 : 0, marginBottom: i < prog.howItWorks.length - 1 ? 20 : 0, borderBottom: i < prog.howItWorks.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}>
+                            <div style={{ fontFamily: 'var(--font-serif)', fontSize: 28, fontWeight: 400, color: 'rgba(184,149,42,0.20)', lineHeight: 1, flexShrink: 0, width: 40 }}>{step.step}</div>
+                            <div>
+                              <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--white)', marginBottom: 4 }}>{step.title}</div>
+                              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.65 }}>{step.desc}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Divisor */}
                   <div style={{ height: 1, background: 'var(--gray-200)', marginBottom: 40 }} />
 
@@ -149,16 +169,18 @@ export default function ProgramsPage() {
                   <p className="font-serif font-light italic" style={{ fontSize: 16, color: 'var(--gray-600)', lineHeight: 1.7, marginBottom: 32 }}>
                     "{prog.result}"
                   </p>
-                  <Link href="/diagnostico" className="btn-primary" style={{ display: 'inline-flex' }}>
-                    {prog.cta}
-                  </Link>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Link href="/diagnostico" className="btn-primary btn-primary-responsive">
+                      {prog.cta}
+                    </Link>
+                  </div>
 
                 </div>
               </FadeIn>
 
-              {/* DIREITA — card preto "Como funciona" fixo, altura total */}
+              {/* DIREITA — card preto "Como funciona" — só no desktop */}
               <FadeIn delay={0.15}>
-                <div style={{ background: 'var(--black)', padding: '40px', position: 'relative', overflow: 'hidden', height: '100%' }}>
+                <div className="hidden lg:block" style={{ background: 'var(--black)', padding: '40px', position: 'relative', overflow: 'hidden', height: '100%' }}>
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
                   <div style={{ fontSize: 10, letterSpacing: 3, textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 8 }}>Passo a passo</div>
                   <h3 className="font-serif font-normal" style={{ fontSize: 20, color: 'var(--white)', marginBottom: 32 }}>Como funciona</h3>

@@ -7,7 +7,7 @@ export const founders = [
     // SUBSTITUIR: coloque a foto real em /public/images/camilla-santos.webp
     image: '/images/camilla-santos.webp',
     bio: [
-      'Com mais de uma década liderando times, operações e negócios, Camilla transformou sua experiência prática em uma metodologia que funciona. Sua abordagem combina coragem, responsabilidade e execução — entregando líderes que realmente inspiram e geram resultado.',
+      'Com mais de uma década liderando times, operações e negócios, Camilla Santos transformou sua experiência prática em uma metodologia que funciona. Sua abordagem combina coragem, responsabilidade e execução — entregando líderes que realmente inspiram e geram resultado.',
       'Especialista em liderança autêntica, gestão de pessoas e desenvolvimento de alta performance. Já impactou centenas de profissionais que hoje lideram com mais clareza, confiança e propósito.',
     ],
     expertise: ['Liderança Prática', 'Gestão de Pessoas', 'Alta Performance', 'Comunicação'],
@@ -20,7 +20,7 @@ export const founders = [
     // SUBSTITUIR: coloque a foto real em /public/images/luciana-venancio.jpg
     image: '/images/luciana-venancio.webp',
     bio: [
-      'Psicóloga especialista em Neuropsicologia e Psicologia Hospitalar, Luciana traz a base científica do comportamento humano para o centro da metodologia Protagonize. Sua expertise em saúde mental, inteligência emocional e psicologia positiva eleva cada processo de desenvolvimento.',
+      'Psicóloga especialista em Neuropsicologia e Psicologia Hospitalar, Luciana Venâncio traz a base científica do comportamento humano para o centro da metodologia Protagonize. Sua expertise em saúde mental, inteligência emocional e psicologia positiva eleva cada processo de desenvolvimento.',
       'É a responsável por tornar o método não apenas eficaz, mas profundamente humano — garantindo que as transformações sejam duradouras, integradas e biologicamente fundamentadas.',
     ],
     expertise: ['Neuropsicologia', 'Saúde Mental', 'Inteligência Emocional', 'Psicologia Positiva'],
@@ -92,7 +92,7 @@ export const programs = [
     description: 'Acompanhamento 100% personalizado com diagnóstico individual, sessões exclusivas e plano estratégico construído sob medida para o seu momento, seus desafios e seus objetivos. Vagas limitadas.',
     features: [
       'Diagnóstico individual completo',
-      'Sessões 1:1 com Camilla e Luciana',
+      'Sessões 1:1 com Camilla Santos e Luciana Venâncio',
       'Plano estratégico sob medida',
       'Suporte contínuo entre sessões',
       'Acesso ilimitado à plataforma',

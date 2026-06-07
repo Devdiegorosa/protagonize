@@ -197,14 +197,11 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 200;
-    transition: all 0.4s var(--easing);
-  }
-  .nav-root.scrolled {
-    background: rgba(1,24,38,0.97);
-    backdrop-filter: blur(20px);
+    background: #011826;
     border-bottom: 1px solid rgba(184,149,42,0.15);
   }
-  .nav-root.open { background: rgba(1,24,38,0.97); }
+  .nav-root.scrolled { background: #011826; }
+  .nav-root.open     { background: #011826; }
 
   .nav-logo {
     font-family: var(--font-serif);
@@ -515,11 +512,16 @@
 
   /* ── Page hero */
   .page-hero {
-    min-height: 52vh;
     background: var(--black);
     display: flex; align-items: flex-end;
-    padding: 130px 5% 72px;
+    padding: 40px 5% 40px;
     position: relative; overflow: hidden;
+  }
+  @media (min-width: 1024px) {
+    .page-hero {
+      min-height: 46vh;
+      padding: 60px 5% 72px;
+    }
   }
   .page-hero::after {
     content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
@@ -605,3 +607,18 @@
 /* ── Contact channel link */
 .contact-channel-link { transition: opacity 0.3s ease; }
 .contact-channel-link:hover { opacity: 0.7; }
+
+/* ── Botões full width quando empilhados no mobile */
+@media (max-width: 639px) {
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── Botão largura total no mobile */
+.btn-primary.w-full  { width: 100%; justify-content: center; }
+@media (min-width: 640px) {
+  .btn-primary.sm\:w-auto { width: auto; }
+}

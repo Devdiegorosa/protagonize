@@ -21,7 +21,7 @@ export default function HomePage() {
         <div className="absolute" style={{ top:'-20%',right:'-10%',width:'60%',height:'80%',background:'radial-gradient(ellipse,rgba(184,149,42,0.12) 0%,transparent 65%)',pointerEvents:'none' }} />
         <div className="absolute" style={{ bottom:'-20%',left:'-10%',width:'50%',height:'70%',background:'radial-gradient(ellipse,rgba(184,149,42,0.07) 0%,transparent 65%)',pointerEvents:'none' }} />
 
-        <div className="relative z-10 max-w-[1180px] mx-auto px-[5%] pt-[120px] pb-20 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center">
+        <div className="relative z-10 max-w-[1180px] mx-auto px-[5%] pt-12 pb-20 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-20 items-center">
           <FadeIn>
             <div className="flex items-center gap-3 mb-8">
               <div className="hero-eyebrow-line" />
@@ -34,8 +34,8 @@ export default function HomePage() {
               Mentorias transformadoras para quem deseja crescer com propósito, confiança e alta performance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-16">
-              <Link href="/diagnostico" className="btn-primary" style={{ justifyContent: 'center' }}>Agendar Sessão Estratégica →</Link>
-              <Link href="/programs" className="btn-secondary" style={{ justifyContent: 'center' }}>Conhecer os Programas</Link>
+              <Link href="/diagnostico" className="btn-primary" style={{ justifyContent: 'center', textAlign: 'center' }}>Agendar Sessão Estratégica →</Link>
+              <Link href="/programs" className="btn-secondary" style={{ justifyContent: 'center', textAlign: 'center' }}>Conhecer os Programas</Link>
             </div>
             <div className="flex gap-8">
               {stats.map((s, i) => (
@@ -177,7 +177,7 @@ export default function HomePage() {
             <h2 className="section-h2">Escolha o programa <em>ideal para você</em></h2>
             <p className="section-lead">Cada programa é projetado para um momento específico da sua jornada. Em dúvida? Agende uma sessão estratégica gratuita.</p>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5 mt-[72px]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0.5 mt-[72px]">
             {programs.map((prog, i) => (
               <FadeIn key={prog.id} delay={i * 0.1}>
                 <div className="prog-card" style={{ background: prog.featured ? 'var(--black)' : 'var(--white)', position: 'relative' }}>
@@ -216,7 +216,7 @@ export default function HomePage() {
         <div className="max-w-[1180px] mx-auto">
           <FadeIn>
             <SectionEyebrow>Prova Social</SectionEyebrow>
-            <h2 className="section-h2 section-h2--white" style={{ whiteSpace: 'wrap' }}>Resultados que <em>falam por si</em></h2>
+            <h2 className="section-h2 section-h2--white">Resultados que <em>falam por si</em></h2>
           </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0.5 mt-[72px] mb-[72px]">
             {stats.map((s, i) => (
@@ -228,7 +228,7 @@ export default function HomePage() {
               </FadeIn>
             ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-0.5">
             {testimonials.map((t, i) => (
               <FadeIn key={t.name} delay={i * 0.1}>
                 <div className="testi-card">
