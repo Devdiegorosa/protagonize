@@ -33,9 +33,9 @@ export default function HomePage() {
             <p className="text-[17px] leading-[1.8] mb-12 font-light max-w-[480px]" style={{ color:'rgba(255,255,255,0.55)' }}>
               Mentorias transformadoras para quem deseja crescer com propósito, confiança e alta performance.
             </p>
-            <div className="flex gap-4 flex-wrap mb-16">
-              <Link href="/diagnostico" className="btn-primary">Agendar Sessão Estratégica →</Link>
-              <Link href="/programs" className="btn-secondary">Conhecer os Programas</Link>
+            <div className="flex flex-col sm:flex-row gap-4 mb-16">
+              <Link href="/diagnostico" className="btn-primary" style={{ justifyContent: 'center' }}>Agendar Sessão Estratégica →</Link>
+              <Link href="/programs" className="btn-secondary" style={{ justifyContent: 'center' }}>Conhecer os Programas</Link>
             </div>
             <div className="flex gap-8">
               {stats.map((s, i) => (
@@ -95,7 +95,12 @@ export default function HomePage() {
                 </ul>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2}><div className="flex items-center justify-center py-8 md:py-0"><span className="font-serif text-4xl text-gold">→</span></div></FadeIn>
+            <FadeIn delay={0.2}>
+              <div className="flex items-center justify-center py-8 md:py-0">
+                <span className="font-serif text-4xl text-gold md:hidden">↓</span>
+                <span className="font-serif text-4xl text-gold hidden md:block">→</span>
+              </div>
+            </FadeIn>
             <FadeIn delay={0.3}>
               <div className="transform-col transform-col--after">
                 <div className="transform-label transform-label--after">Depois</div>
@@ -211,7 +216,7 @@ export default function HomePage() {
         <div className="max-w-[1180px] mx-auto">
           <FadeIn>
             <SectionEyebrow>Prova Social</SectionEyebrow>
-            <h2 className="section-h2 section-h2--white">Resultados que <em>falam por si</em></h2>
+            <h2 className="section-h2 section-h2--white" style={{ whiteSpace: 'wrap' }}>Resultados que <em>falam por si</em></h2>
           </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0.5 mt-[72px] mb-[72px]">
             {stats.map((s, i) => (
